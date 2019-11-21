@@ -92,6 +92,18 @@ public interface StepCollector {
     Map<Stage, List<Step>> collectLifecycleSteps(List<CandidateSteps> candidateSteps, Lifecycle lifecycle, Meta storyAndScenarioMeta, Scope scope);
 
     /**
+     * Collects all lifecycle steps to execute per {@link Stage} of execution
+     *
+     * @param candidateSteps the {@link CandidateSteps}.
+     * @param lifecycle the {@link Lifecycle}
+     * @param storyAndScenarioMeta the story and scenario {@link Meta} parameters
+     * @param scope the {@link Scope} of the lifecycle steps
+     * @param scope the {@link StepMonitor}
+     * @return A List of executable {@link Step}s
+     */
+    Map<Stage, List<Step>> collectLifecycleSteps(List<CandidateSteps> candidateSteps, Lifecycle lifecycle, Meta storyAndScenarioMeta, Scope scope, StepMonitor stepMonitor);
+
+    /**
      * Collects all of the {@link Step}s to execute for a scenario.
      * 
      * @param candidateSteps the {@link CandidateSteps}.
